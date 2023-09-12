@@ -1,7 +1,6 @@
 import streamlit as st
 import random
 import numpy as np
-import matplotlib.pyplot as plt
 
 st.header("モンテカルロシュミレーター")
 betting_theory = st.selectbox("ベッティング方法を選択してください", ["-", "マーチンゲール法"], 0)
@@ -47,11 +46,6 @@ if betting_theory == "マーチンゲール法":
                     lose_count += 1
                 bank_role_history.append(bank_role)
             st.line_chart(bank_role_history)
-            plt.plot(bank_role_history, label="Bank Role Over Time")
-            plt.xlabel("Number of Bets")
-            plt.ylabel("Bank Role")
-            plt.legend()
-            plt.show()
 
     if perpose == "破産する確率を計算する":
         st.write("準備中")
